@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<!-- MAIN CONTENT -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+<!-- INFO PANEL -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="8dp"
+android:background="#EEEEEE">
+
+
+
+
+<TextView
+android:id="@+id/txtLatLng"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Lat: --   Lng: --"
+android:textSize="14sp"
+android:textColor="#000"/>
+
+<TextView
+android:id="@+id/txtSpeed"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Speed: 0 km/h"
+android:textSize="14sp"
+android:textColor="#000"/>
+
+<TextView
+android:id="@+id/txtTime"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Time: 00:00:00"
+android:textSize="16sp"
+android:textColor="#000"/>
+
+<TextView
+android:id="@+id/txtDistance"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Distance: 0 m"
+android:textSize="14sp"
+android:textColor="#000"/>
+
+<!-- ðŸ”˜ BUTTON ROW (HORIZONTAL) -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:gravity="center"
+android:paddingTop="6dp">
+
+
+
+<Button
+android:id="@+id/export"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Export"/>
+
+</LinearLayout>
+
+<!-- ðŸ”˜ SECOND ROW (OPTIONAL CONTROLS) -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:gravity="center">
+
+<Button
+android:id="@+id/openMap"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Open Track"/>
+
+<Button
+android:id="@+id/explore"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Explore"/>
+
+</LinearLayout>
+
+</LinearLayout>
+
+<!-- GRAPH VIEW (MAX SPACE) -->
+<com.p.l.GraphView
+android:id="@+id/graphView"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_weight="1"/>
+
+</LinearLayout>
+
+<!-- FLOATING LOCATION BUTTON -->
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+android:id="@+id/fabLocation"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:contentDescription="My Location"
+app:srcCompat="@android:drawable/ic_menu_mylocation"
+android:layout_margin="16dp"
+app:layout_anchor="@id/graphView"
+app:layout_anchorGravity="bottom|end"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true"
+tools:context=".MainActivity">
+
+<!-- Main Content -->
+<androidx.core.widget.NestedScrollView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingTop="?attr/actionBarSize"
+android:clipToPadding="false">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="12dp">
+
+<!-- Modern Info Card -->
+<com.google.android.material.card.MaterialCardView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginBottom="12dp"
+app:cardCornerRadius="16dp"
+app:cardElevation="4dp">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp">
+
+<!-- Location Header -->
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Current Location"
+android:textSize="16sp"
+android:textStyle="bold"
+android:textColor="?android:attr/colorPrimary"
+android:layout_marginBottom="8dp" />
+
+<!-- Coordinates -->
+<TextView
+android:id="@+id/txtLatLng"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Lat: --   Lng: --"
+android:textSize="13sp"
+android:fontFamily="monospace"
+android:layout_marginBottom="12dp" />
+
+<!-- Metrics Row 1 -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginBottom="8dp">
+
+<com.google.android.material.card.MaterialCardView
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_marginEnd="6dp"
+app:cardElevation="0dp"
+app:cardBackgroundColor="?android:attr/colorSecondary"
+app:cardCornerRadius="12dp">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="12dp"
+android:gravity="center">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Speed"
+android:textSize="11sp"
+android:textColor="?android:attr/textColorSecondary" />
+
+<TextView
+android:id="@+id/txtSpeed"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0 km/h"
+android:textSize="18sp"
+android:textStyle="bold" />
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+<com.google.android.material.card.MaterialCardView
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_marginStart="6dp"
+app:cardElevation="0dp"
+app:cardBackgroundColor="?android:attr/colorSecondary"
+app:cardCornerRadius="12dp">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="12dp"
+android:gravity="center">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Distance"
+android:textSize="11sp"
+android:textColor="?android:attr/textColorSecondary" />
+
+<TextView
+android:id="@+id/txtDistance"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0 m"
+android:textSize="18sp"
+android:textStyle="bold" />
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
+
+<!-- Metrics Row 2 -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginBottom="16dp">
+
+<com.google.android.material.card.MaterialCardView
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_marginEnd="6dp"
+app:cardElevation="0dp"
+app:cardBackgroundColor="?android:attr/colorPrimary"
+app:cardCornerRadius="12dp">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="12dp"
+android:gravity="center">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Time"
+android:textSize="11sp"
+android:textColor="@android:color/white" />
+
+<TextView
+android:id="@+id/txtTime"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="00:00:00"
+android:textSize="16sp"
+android:textStyle="bold"
+android:fontFamily="monospace"
+android:textColor="@android:color/white" />
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+<!-- Placeholder for future metric -->
+<View
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_marginStart="6dp"
+android:visibility="invisible" />
+</LinearLayout>
+
+<!-- Action Buttons -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal">
+
+<Button
+android:id="@+id/export"
+style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Export"
+android:layout_marginEnd="4dp"
+android:textAllCaps="false" />
+
+<Button
+android:id="@+id/openMap"
+style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Open Track"
+android:layout_marginStart="4dp"
+android:layout_marginEnd="4dp"
+android:textAllCaps="false" />
+
+<Button
+android:id="@+id/explore"
+style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Explore"
+android:layout_marginStart="4dp"
+android:textAllCaps="false" />
+</LinearLayout>
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+<!-- Graph Container -->
+<com.google.android.material.card.MaterialCardView
+android:layout_width="match_parent"
+android:layout_height="300dp"
+app:cardCornerRadius="16dp"
+app:cardElevation="2dp">
+
+<com.p.l.GraphView
+android:id="@+id/graphView"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="8dp" />
+</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+<!-- Floating Location Button -->
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+android:id="@+id/fabLocation"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_margin="16dp"
+android:contentDescription="My Location"
+app:srcCompat="@android:drawable/ic_menu_mylocation"
+app:fabSize="normal"
+app:elevation="6dp"
+app:backgroundTint="?android:attr/colorPrimary"
+android:tint="@android:color/white"
+app:layout_anchor="@id/graphView"
+app:layout_anchorGravity="bottom|end" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

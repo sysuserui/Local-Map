@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:osmdroid="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<!-- TOP CONTROL PANEL -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="10dp">
+
+<Button
+android:id="@+id/btnDownload"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Download Nearby Offline Map" />
+
+<TextView
+android:id="@+id/txtStatus"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Status"
+android:paddingTop="8dp"
+android:textSize="14sp" />
+
+</LinearLayout>
+
+<!-- MAP VIEW (FULL SCREEN REMAINING) -->
+<org.osmdroid.views.MapView
+android:id="@+id/map"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<!-- MAIN CONTAINER -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+<!-- SCROLLABLE TOP PANEL -->
+<ScrollView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:fillViewport="true">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="12dp"
+android:background="@color/panelBackground">
+
+<!-- LOCATION -->
+<TextView
+android:id="@+id/txtLatLng"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="@string/lat_lng"
+android:textSize="14sp"
+android:textColor="@color/textPrimary"/>
+
+<!-- SPEED -->
+<TextView
+android:id="@+id/txtSpeed"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="@string/speed"
+android:textSize="14sp"
+android:textColor="@color/textPrimary"
+android:layout_marginTop="4dp"/>
+
+<!-- TIME -->
+<TextView
+android:id="@+id/txtTime"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/time"
+android:textSize="16sp"
+android:textStyle="bold"
+android:textColor="@color/textPrimary"
+android:layout_marginTop="4dp"/>
+
+<!-- DISTANCE -->
+<TextView
+android:id="@+id/txtDistance"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="@string/distance"
+android:textSize="14sp"
+android:textColor="@color/textPrimary"
+android:layout_marginTop="4dp"/>
+
+<!-- BUTTON ROW -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginTop="10dp">
+
+<com.google.android.material.button.MaterialButton
+android:id="@+id/openLastTrack"
+style="@style/Widget.MaterialComponents.Button"
+
+
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Open Latest Track"/>
+</LinearLayout>
+
+<!-- SECOND ROW -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginTop="6dp">
+
+<com.google.android.material.button.MaterialButton
+android:id="@+id/saveImage"
+style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="save in gallery"/>
+
+<com.google.android.material.button.MaterialButton
+android:id="@+id/explore"
+style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+
+
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_marginStart="6dp"
+android:text="@string/explore"/>
+</LinearLayout>
+
+</LinearLayout>
+</ScrollView>
+
+<!-- GRAPH VIEW -->
+<com.p.l.GraphView
+android:id="@+id/graphView"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_weight="1"/>
+</LinearLayout>
+
+<!-- FLOATING BUTTON -->
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+android:id="@+id/fabLocation"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:contentDescription="@string/my_location"
+app:srcCompat="@android:drawable/ic_menu_mylocation"
+android:layout_margin="16dp"
+app:layout_anchor="@id/graphView"
+app:layout_anchorGravity="bottom|end"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

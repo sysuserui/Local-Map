@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Local Map</string>
+
+
+    <string name="lat_lng">Lat: --   Lng: --</string>
+    <string name="speed">Speed: 0 km/h</string>
+    <string name="time">Time: 00:00:00</string>
+    <string name="distance">Distance: 0 m</string>
+    <string name="export">Export</string>
+    <string name="open_track">Open Track</string>
+    <string name="explore">Explore</string>
+    <string name="my_location">My Location</string>
+
+</resources>
